@@ -1,0 +1,13 @@
+# Client Gitignore
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.*
+*.env
+!.env.example
+*.local
+.vercel
+logs/
+*.log
+.DS_Store

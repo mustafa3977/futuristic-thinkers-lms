@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased min-h-screen selection:bg-teal-200 selection:text-teal-900;
+  }
+
+  /* Accessible WCAG AA visible focus indicators */
+  :focus-visible {
+    @apply outline-none ring-2 ring-teal-500 ring-offset-2 ring-offset-white;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-bold px-6 py-3 rounded-2xl bg-brand-navy text-white hover:bg-brand-indigo active:scale-[0.99] transition-all shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-teal;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center font-bold px-6 py-3 rounded-2xl bg-brand-teal text-brand-navy hover:bg-emerald-400 active:scale-[0.99] transition-all shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-teal;
+  }
+
+  .btn-amber {
+    @apply inline-flex items-center justify-center font-bold px-6 py-3 rounded-2xl bg-brand-amber text-brand-navy hover:bg-amber-400 active:scale-[0.99] transition-all shadow-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-amber;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center font-semibold px-5 py-2.5 rounded-2xl border-2 border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-100 transition-all;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow p-6;
+  }
+}
+

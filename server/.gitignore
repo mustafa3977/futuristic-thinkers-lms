@@ -1,0 +1,12 @@
+# Server Gitignore
+node_modules/
+.env
+.env.*
+*.env
+!.env.example
+uploads/*
+!uploads/.gitkeep
+logs/
+*.log
+coverage/
+.DS_Store
